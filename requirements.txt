@@ -6,3 +6,4 @@ arrow
 django-phonenumber-field
 phonenumbers
 django-phonenumber-field
+Pillow
