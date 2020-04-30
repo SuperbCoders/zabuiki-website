@@ -75,7 +75,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     social = models.URLField("Cоцсеть", blank=True)
     telegram = models.CharField("Телеграм", blank=True, max_length=100)
     comment = models.TextField("Комментарий", blank=True)
-    birthday = models.DateField("Дата рождения", blank=True)
+    birthday = models.DateField("Дата рождения", blank=True, null=True)
 
     is_staff = models.BooleanField("Статус персонала", default=False)
     is_active = models.BooleanField("Активный", default=True)
