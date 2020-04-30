@@ -7,7 +7,7 @@ from django.contrib.auth.admin import UserAdmin
 class AccountAdmin(UserAdmin):
 
     list_display = ('__str__', 'email', 'phone', 'status', 'date_joined')
-    ordering = ('pk',)
+    ordering = ('is_staff', 'pk',)
     search_fields = ('email', 'phone',)
     list_per_page = 150
 
@@ -39,7 +39,7 @@ class AccountAdmin(UserAdmin):
             ),
         }),
     )
-    
+
     fieldsets = (
         (None, {
             'fields': ('password',)
