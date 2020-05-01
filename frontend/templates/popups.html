@@ -1,0 +1,61 @@
+{% load static %}
+
+
+<div class="popup --socials">
+    <div class="popup__bg"></div>
+    <div class="popup__close"><img src="{% static 'images/close.svg' %}" alt="" /></div>
+    <div class="popup__panel">
+        <div class="mobile__nav"><a class="header__link" href="#">расписание </a><a class="header__link __callback"
+                href="#">вступить в клуб </a></div>
+        <div class="socials">
+            <div><a class="socilas__link" href="#">Инстаграм</a></div>
+            <div><a class="socilas__link" href="#">Телеграм с анонсами</a></div>
+            <div><a class="socilas__link" href="#">Детский чат</a></div>
+            <div><a class="socilas__link" href="#">Общий чат</a></div>
+            <div><a class="socilas__link" href="#">Чат книжного клуба</a></div>
+            <div><a class="socilas__link" href="#">hi@zaebki.ru</a></div>
+        </div>
+    </div>
+</div>
+<div class="popup --callback">
+    <div class="popup__bg"></div>
+    <div class="popup__close"><img src="{% static 'images/close.svg' %}" alt="" /></div>
+    <div class="popup__panel">
+        <form class="form --error">
+            <div class="form__title">Вступить в клуб</div>
+            <label class="label__input">
+                <input type="text" placeholder="имя" />
+            </label>
+            <label class="label__input">
+                <input type="text" placeholder="почта" />
+            </label>
+            <label class="label__input">
+                <input type="text" placeholder="телефон" />
+            </label>
+            <label class="label__input">
+                <input type="text" placeholder="Ссылка на FB или IG" />
+            </label>
+            <div class="submit btn">
+                <button>Отправить заявку</button>
+            </div>
+            <div class="error btn">Заполни все поля </div>
+        </form>
+    </div>
+</div>
+<div class="popup --goodmessage">
+    <div class="popup__bg"></div>
+    <div class="popup__close"><img src="{% static 'images/close.svg' %}" alt="" /></div>
+    <div class="popup__panel">
+        <div class="container">
+            <div class="goodmessage__title">Заявка отправлена</div>
+            <div class="goodmessage__pic"><img src="{% static 'images/goodmessage.png' %}"
+                    srcset="{% static 'images/goodmessage2x.png' %}" alt="" /></div>
+            <div class="goodmessage__text">
+                <p>Большое спасибо за заявку на вступление!<br> У нас закрытый клуб, поэтому нам нужно<br> проверить
+                    информацию перед приемом в<br> наши ряды.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+

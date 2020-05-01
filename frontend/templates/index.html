@@ -3,8 +3,74 @@
 {% load static %}
 
 
-{% block title %}{% endblock %}
+{% block title %}
+{{ site_config.meta_title}}
+{% endblock %}
 
 {% block content %}
-
+<div class="main">
+    <div class="container">
+        <div class="events__slider">
+            <img src="./images/slide.jpg" srcset="./images/slide@2x.jpg 2x" alt="" />
+            <img src="./images/slide.jpg" srcset="./images/slide@2x.jpg 2x" alt="" />
+            <img src="./images/slide.jpg" srcset="./images/slide@2x.jpg 2x" alt="" />
+        </div>
+        <div class="main__top">
+            <div class="main__top-left">Gilrs Club, <br>где мы идем <br>на встречу <br>приключениям</div>
+            <div class="main__top-center"><img src="./images/foto_main1.png" srcset="./images/foto_main1@2x.png 2x"
+                    alt="" /></div>
+            <div class="main__top-right">
+                <p>Осталось 2 места <br>на встречу в субботу <br>Жми!</p>
+            </div>
+            <div class="nav-container">
+                <div class="nav">
+                    {% for page in pages %}
+                        <div class="nav-wrap"><a class="nav__link" href="{% url 'pages:page' slug=page.slug %}">{{page.nav_name}}</a></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main__bottom">
+        <div class="container">
+            <div class="main__bottom-left">
+                <div>
+                    <p>Gilrs Club</p>
+                    <span>
+                        Мы – сообщество девушек, <br>классно проводим время, <br>общаемся и дружим.<br>
+                        <a href="#">Подробнее о нас</a>
+                    </span>
+                </div>
+            </div>
+            <div class="main__bottom-center">
+                <img src="./images/foto_main2.png" srcset="./images/foto_main2@2x.png 2x" alt="" />
+            </div>
+        </div>
+        <div class="main__bottom-right">
+            <img src="./images/foto_main3.png" srcset="./images/foto_main3@2x.png 2x" alt="" />
+        </div>
+    </div>
+    <div class="main__events">
+        <div class="container">
+            <a class="main__event" href="">
+                <div class="main__event-pic">
+                    <img src="./images/foto_main1.png" srcset="./images/foto_main1@2x.png 2x" alt="" />
+                </div>
+                <div class="main__event-text">Поездка в Берлин, декабрь 2019</div>
+            </a>
+            <a class="main__event" href="">
+                <div class="main__event-pic">
+                    <img src="./images/foto_main1.png" srcset="./images/foto_main1@2x.png 2x" alt="" />
+                </div>
+                <div class="main__event-text">Поездка в Берлин, декабрь 2019</div>
+            </a>
+            <a class="main__event" href="">
+                <div class="main__event-pic">
+                    <img src="./images/foto_main1.png" srcset="./images/foto_main1@2x.png 2x" alt="" />
+                </div>
+                <div class="main__event-text">Поездка в Берлин, декабрь 2019</div>
+            </a>
+        </div>
+    </div>
+</div>
 {% endblock %}

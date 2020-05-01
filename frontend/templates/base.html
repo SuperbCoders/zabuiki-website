@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{% static 'css/libscss.css' %}" />
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <link rel="icon" type="image/png" href="{% static 'favicon.ico' %}" />
-    <title>За Буйки</title>
+    <title>{% block title %}{% endblock %}</title>
 </head>
 
 <body>
@@ -22,8 +22,9 @@
         {% endblock %}
 
         {% include "footer.html" %}
-        {% include "scripts.html" %}
     </div>
+    {% include "popups.html" %}
+    {% include "scripts.html" %}
 </body>
 
 </html>

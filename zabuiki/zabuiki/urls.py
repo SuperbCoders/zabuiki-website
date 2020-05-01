@@ -14,16 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf import settings
-from django.contrib import admin
-from django.urls import include, path, re_path
-from django.views.static import serve
 from django.conf.urls.static import static
+from django.contrib import admin
+from django.urls import include, path
+from django.views.static import serve
 
-from zabuiki.views import index
+from zabuiki import views
 
 urlpatterns = [
+    path('', views.index, name="index-page"),
     path('admin/', admin.site.urls),
-    path('', index, name="index-page"),
+    path('pages/', include('zabuiki.pages.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
