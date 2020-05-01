@@ -16,16 +16,21 @@
             <img src="./images/slide.jpg" srcset="./images/slide@2x.jpg 2x" alt="" />
         </div>
         <div class="main__top">
-            <div class="main__top-left">Gilrs Club, <br>где мы идем <br>на встречу <br>приключениям</div>
-            <div class="main__top-center"><img src="./images/foto_main1.png" srcset="./images/foto_main1@2x.png 2x"
-                    alt="" /></div>
+            <div class="main__top-left">{{ site_config.up_text|safe }}</div>
+            <div class="main__top-center">
+                <img src="{% get_media_prefix %}{{site_config.image_1_pc}}" alt="" />
+            </div>
             <div class="main__top-right">
-                <p>Осталось 2 места <br>на встречу в субботу <br>Жми!</p>
+                <a style="color:#FF0000; text-decoration: none;" target="_blank" href="{{ site_config.anonce_link}}">
+                    <p>{{ site_config.anonce_text|safe }}</p>
+                </a>
             </div>
             <div class="nav-container">
                 <div class="nav">
                     {% for page in pages %}
-                        <div class="nav-wrap"><a class="nav__link" href="{% url 'pages:page' slug=page.slug %}">{{page.nav_name}}</a></div>
+                        <div class="nav-wrap">
+                            <a class="nav__link" href="{% url 'pages:page' slug=page.slug %}">{{page.nav_name}}</a>
+                        </div>
                     {% endfor %}
                 </div>
             </div>
@@ -37,39 +42,30 @@
                 <div>
                     <p>Gilrs Club</p>
                     <span>
-                        Мы – сообщество девушек, <br>классно проводим время, <br>общаемся и дружим.<br>
+                        {{ site_config.down_text|safe }}
+                        <br>
                         <a href="#">Подробнее о нас</a>
                     </span>
                 </div>
             </div>
             <div class="main__bottom-center">
-                <img src="./images/foto_main2.png" srcset="./images/foto_main2@2x.png 2x" alt="" />
+                <img src="{% get_media_prefix %}{{site_config.image_2_pc}}" alt="" />
             </div>
         </div>
         <div class="main__bottom-right">
-            <img src="./images/foto_main3.png" srcset="./images/foto_main3@2x.png 2x" alt="" />
+            <img src="{% get_media_prefix %}{{site_config.image_3_pc}}" alt="" />
         </div>
     </div>
     <div class="main__events">
         <div class="container">
-            <a class="main__event" href="">
-                <div class="main__event-pic">
-                    <img src="./images/foto_main1.png" srcset="./images/foto_main1@2x.png 2x" alt="" />
-                </div>
-                <div class="main__event-text">Поездка в Берлин, декабрь 2019</div>
-            </a>
-            <a class="main__event" href="">
-                <div class="main__event-pic">
-                    <img src="./images/foto_main1.png" srcset="./images/foto_main1@2x.png 2x" alt="" />
-                </div>
-                <div class="main__event-text">Поездка в Берлин, декабрь 2019</div>
-            </a>
-            <a class="main__event" href="">
-                <div class="main__event-pic">
-                    <img src="./images/foto_main1.png" srcset="./images/foto_main1@2x.png 2x" alt="" />
-                </div>
-                <div class="main__event-text">Поездка в Берлин, декабрь 2019</div>
-            </a>
+            {% for mobile_block in mobile_blocks %}
+                <a class="main__event" href="">
+                    <div class="main__event-pic">
+                        <img src="{% get_media_prefix %}{{mobile_block.image}}" srcset="{% get_media_prefix %}{{mobile_block.image}}" alt="" />
+                    </div>
+                    <div class="main__event-text">{{ mobile_block.text }}</div>
+                </a>
+            {% endfor %}
         </div>
     </div>
 </div>

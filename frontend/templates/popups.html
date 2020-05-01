@@ -8,12 +8,10 @@
         <div class="mobile__nav"><a class="header__link" href="#">расписание </a><a class="header__link __callback"
                 href="#">вступить в клуб </a></div>
         <div class="socials">
-            <div><a class="socilas__link" href="#">Инстаграм</a></div>
-            <div><a class="socilas__link" href="#">Телеграм с анонсами</a></div>
-            <div><a class="socilas__link" href="#">Детский чат</a></div>
-            <div><a class="socilas__link" href="#">Общий чат</a></div>
-            <div><a class="socilas__link" href="#">Чат книжного клуба</a></div>
-            <div><a class="socilas__link" href="#">hi@zaebki.ru</a></div>
+            {% for social in socials %}
+                <div><a class="socilas__link" target="_blank" href="{{ social.link }}">{{ social.name }}</a></div>
+            {% endfor %}
+            <div><a class="socilas__link" href="mailto:{{ site_config.email }}">{{ site_config.email }}</a></div>
         </div>
     </div>
 </div>
