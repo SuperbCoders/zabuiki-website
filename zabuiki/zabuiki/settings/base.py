@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     'zabuiki.account',
     'zabuiki.site_conf',
+    'zabuiki.events',
 ]
 
 MIDDLEWARE = [
