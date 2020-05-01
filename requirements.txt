@@ -7,3 +7,6 @@ django-phonenumber-field
 phonenumbers
 django-phonenumber-field
 Pillow
+django-autoslug
+django-admin-thumbnails
+django_ace

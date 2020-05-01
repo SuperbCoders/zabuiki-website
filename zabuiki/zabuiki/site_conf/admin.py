@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from zabuiki.site_conf.models import *
 import admin_thumbnails
+from zabuiki.site_conf.froms import SiteConfigChangeForm
 
 
 class SocialInline(admin.TabularInline):
@@ -21,6 +22,7 @@ class SocialInline(admin.TabularInline):
 @admin_thumbnails.thumbnail('image_3_pc')
 @admin_thumbnails.thumbnail('image_1_mobile')
 class SiteConfigAdmin(admin.ModelAdmin):
+    form = SiteConfigChangeForm
 
     fieldsets = (
         ('META информация', {

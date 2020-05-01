@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'phonenumber_field',
+    'django_ace',
 
     'zabuiki.account',
     'zabuiki.site_conf',
