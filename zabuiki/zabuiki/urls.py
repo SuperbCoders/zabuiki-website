@@ -24,6 +24,7 @@ from zabuiki import views
 urlpatterns = [
     path('', views.index, name="index-page"),
     path('admin/', admin.site.urls),
+    path('about_us/', views.about, name="about"),
     path('pages/', include('zabuiki.pages.urls')),
 ]
 

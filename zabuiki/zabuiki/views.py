@@ -28,7 +28,14 @@ def e_handler404(request):
 def index(request):
     context = get_main_context(request)
     pages = Page.objects.filter(is_view=True).values('title', 'nav_name', 'slug')
+    mobile_blocks = MobileHomeBlocks.objects.filter(is_view=True)
     context.update({
         'pages': pages,
+        'mobile_blocks': mobile_blocks,
     })
     return render(request, "index.html", context=context)
+
+
+def about(request):
+    context = get_main_context(request)
+    return render(request, "about.html", context=context)
