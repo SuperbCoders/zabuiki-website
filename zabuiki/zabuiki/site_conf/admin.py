@@ -21,6 +21,7 @@ class SocialInline(admin.TabularInline):
 @admin_thumbnails.thumbnail('image_2_pc')
 @admin_thumbnails.thumbnail('image_3_pc')
 @admin_thumbnails.thumbnail('image_1_mobile')
+@admin_thumbnails.thumbnail('about_page_direcor_image')
 class SiteConfigAdmin(admin.ModelAdmin):
     form = SiteConfigChangeForm
 
@@ -68,7 +69,19 @@ class SiteConfigAdmin(admin.ModelAdmin):
                 'image_1_mobile_thumbnail',
             ),
         }),
-        
+
+        ('Контент на странице о нас', {
+            'fields': (
+                'about_page_direcor',
+                'about_page_direcor_image',
+                'about_page_direcor_image_thumbnail',
+                'about_page_main_text',
+                'about_page_top_first_text',
+                'about_page_top_second_text',
+                'about_page_bottom_left_text',
+                'about_page_bottom_right_text',
+            ),
+        }),
     )
 
 
@@ -87,6 +100,22 @@ class MobileHomeBlocksAdmin(admin.ModelAdmin):
         }),
     )
 
+
+@admin_thumbnails.thumbnail('image')
+class LecturersAdmin(admin.ModelAdmin):
+    fieldsets = (
+        ('Информация о лекторе', {
+            'fields': (
+                'name',
+                'position',
+                'text',
+                'image',
+                'image_thumbnail',
+            )
+        }),
+    )
+
 admin.site.register(SiteConfig, SiteConfigAdmin)
 admin.site.register(MobileHomeBlocks, MobileHomeBlocksAdmin)
 admin.site.register(Social)
+admin.site.register(Lecturers, LecturersAdmin)

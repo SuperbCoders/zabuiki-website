@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from zabuiki.site_conf import default_text
 
 
 class SeoMeta(models.Model):
@@ -34,24 +35,45 @@ class SiteConfig(SeoMeta):
 
     email = models.EmailField("Email организации", blank=True)
     anonce_text = models.CharField("Текст анонса", max_length=100, blank=False)
-    anonce_link = models.URLField("Ссылка", blank=False)
-    up_text = models.TextField("Левый нижний текст главной страницы",
+    anonce_link = models.URLField("Ссылка", blank=False, default=default_text.HOME_ANONCE)
+    up_text = models.TextField("Левый верхний текст главной страницы",
         max_length=100,
         blank=False,
-        default="Gilrs Club, <br> где мы идем <br> на встречу приключениям"
+        default=default_text.HOME_TOP_TEXT,
     )
     down_text = models.TextField("Левый нижний текст главной страницы",
         max_length=100,
         blank=False,
-        default="Мы – сообщество девушек, <br> классно проводим время, <br> общаемся и дружим."
+        default=default_text.HOME_BOTTOM_TEXT,
     )
     image_1_pc = models.ImageField("Изображение 1 главной страницы PC", upload_to="images/home")
     image_2_pc = models.ImageField("Изображение 2 главной страницы PC", upload_to="images/home")
     image_3_pc = models.ImageField("Изображение 3 главной страницы PC", upload_to="images/home")
-    image_1_mobile = models.ImageField("Изображение 1 главной страницы Mobile", upload_to="images/home")
+    image_1_mobile = models.ImageField(
+        "Изображение 1 главной страницы Mobile", upload_to="images/home")
 
     html_head = models.TextField(blank=True)
     html_footer = models.TextField(blank=True)
+
+    about_page_main_text = models.TextField(
+        "Заголовок", default=default_text.ABOUT_PAGE_MAIN)
+    about_page_top_first_text = models.TextField(
+        "Верхний текст 1", default=default_text.ABOUT_PAGE_TOP_ITEM_1)
+    about_page_top_second_text = models.TextField(
+        "Верхний текст 2", default=default_text.ABOUT_PAGE_TOP_ITEM_2)
+    about_page_bottom_left_text = models.TextField(
+        "Нижний левый текст", default=default_text.ABOUT_PAGE_BOTTOM_ITEM_LEFT)
+    about_page_bottom_right_text = models.TextField(
+        "Нижний правый текст", default=default_text.ABOUT_PAGE_BOTTOM_ITEM_RIGHT)
+
+    about_page_direcor = models.CharField(
+        "Директор", 
+        max_length=100, 
+        blank=False, 
+        default="МАША ТИМОШЕНКО"
+    )
+    about_page_direcor_image = models.ImageField("Изображение директора", upload_to="images/about")
+
     enabled = models.BooleanField("Активная конфигурация", default=True)
 
     def __str__(self):
@@ -69,3 +91,17 @@ class Social(models.Model):
 
     def __str__(self):
         return f"Социальная сеть {self.name}"
+
+
+class Lecturers(models.Model):
+    class Meta:
+        verbose_name = "Лектор"
+        verbose_name_plural = "Список лекторов"
+
+    name = models.CharField("ФИО", max_length=155)
+    position = models.CharField("Должность", max_length=155)
+    image = models.ImageField("Изображение", upload_to="images/about")
+    text = models.TextField("Описание", blank=False)
+
+    def __str__(self):
+        return f"Лектор {self.name}"

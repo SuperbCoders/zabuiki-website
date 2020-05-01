@@ -3,8 +3,10 @@ from django.shortcuts import render
 from django.template import RequestContext
 from django.views.decorators.csrf import csrf_exempt
 
-from zabuiki.site_conf.models import MobileHomeBlocks, SiteConfig, Social
 from zabuiki.pages.models import Page
+from zabuiki.site_conf.models import (Lecturers, MobileHomeBlocks, SiteConfig,
+                                      Social)
+
 
 def get_main_context(request):
     config = SiteConfig.objects.filter(enabled=True).first()
@@ -38,4 +40,8 @@ def index(request):
 
 def about(request):
     context = get_main_context(request)
+    lecturers = Lecturers.objects.all()
+    context.update({
+        'lecturers': lecturers,
+    })
     return render(request, "about.html", context=context)
