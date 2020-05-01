@@ -20,7 +20,8 @@ class MobileHomeBlocks(models.Model):
 
     image = models.ImageField("Изображение", upload_to="images/home")
     text = models.TextField("Текст")
-    created = models.DateTimeField(default=timezone.now)
+    is_view = models.BooleanField("Отображать на сайте", default=True)
+    created = models.DateTimeField("Дата создания", default=timezone.now)
 
     def __str__(self):
         return f"Мобильный текстовый блок на главной {self.pk}"
@@ -64,8 +65,7 @@ class Social(models.Model):
 
     name = models.CharField("Название", max_length=50)
     link = models.URLField("Ссылка")
-    config = models.ForeignKey(
-        SiteConfig, null=True, on_delete=models.SET_NULL)
+    
 
     def __str__(self):
         return f"Социальная сеть {self.name}"

@@ -21,9 +21,6 @@ class SocialInline(admin.TabularInline):
 @admin_thumbnails.thumbnail('image_3_pc')
 @admin_thumbnails.thumbnail('image_1_mobile')
 class SiteConfigAdmin(admin.ModelAdmin):
-    inlines = [
-        SocialInline,
-    ]
 
     fieldsets = (
         ('META информация', {
@@ -75,6 +72,8 @@ class SiteConfigAdmin(admin.ModelAdmin):
 
 @admin_thumbnails.thumbnail('image')
 class MobileHomeBlocksAdmin(admin.ModelAdmin):
+    list_display = ('__str__', 'is_view', 'created')
+    ordering = ('-created',)
     fieldsets = (
         ('Блок', {
             'fields': (
@@ -88,3 +87,4 @@ class MobileHomeBlocksAdmin(admin.ModelAdmin):
 
 admin.site.register(SiteConfig, SiteConfigAdmin)
 admin.site.register(MobileHomeBlocks, MobileHomeBlocksAdmin)
+admin.site.register(Social)
