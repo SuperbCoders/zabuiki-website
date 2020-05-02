@@ -25,6 +25,7 @@ urlpatterns = [
     path('', views.index, name="index-page"),
     path('admin/', admin.site.urls),
     path('about_us/', views.about, name="about"),
+    path('events/', views.events, name="events"),
     path('pages/', include('zabuiki.pages.urls')),
 ]
 

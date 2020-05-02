@@ -74,6 +74,9 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
             ],
+            'libraries':{
+                'custom_tags': 'zabuiki.templatetags.custom_tags',
+            }
         },
     },
 ]

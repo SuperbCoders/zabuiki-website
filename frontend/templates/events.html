@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load custom_tags %}
+
+{% load static %}
+
+{% block title %}
+    Расписание ближайших событий
+{% endblock %}
+
+{% block content %}
+    <div class="calendar innerpage">
+        <div class="container">
+            <div class="smalltitle">Расписание ближайших событий</div>
+            {% regroup events by event_time|date:"Y-F-d-l" as events_by_day %}
+            <div class="calendar__list">
+                {% for event in events_by_day reversed %}
+                    <div class="calendar__item">
+                        <div class="calendar__date">
+                            <p class="calendar__number">{{ event.grouper|get_date:'day' }}</p>
+                            <p class="calendar__day">
+                                <span>{{ event.grouper|get_date:'month' }}</span>
+                                <span>{{ event.grouper|get_date:'day_n' }}</span>
+                            </p>
+                        </div>
+                        <div class="calendar__event">
+                            {% for event_t in event.list %}
+                                <div class="event">
+                                    <div class="event__title">{{ event_t.name }}</div>
+                                    {% if event_t.is_free %}
+                                        <div class="event__price">
+                                            <span >Бесплатно</span>
+                                        </div>
+                                    {% else %}
+                                        <a class="event__price" href="#">
+                                            <span>4500 ₽</span>
+                                            <p>Купить билет</p>
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div id="sh-preloader"></div>
+{% endblock %}
