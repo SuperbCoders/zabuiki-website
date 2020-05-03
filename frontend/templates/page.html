@@ -7,6 +7,23 @@
     {{ page.meta_title }}
 {% endblock %}
 
+{% block description %}
+    {{ page.meta_description }}
+{% endblock %}
+
+{% block og_title %}
+    {{ page.meta_title }}
+{% endblock %}
+
+{% block og_description %}
+    {{ page.meta_description }}
+{% endblock %}
+
+{% block meta_image %}
+    https://{{ request.META.HTTP_HOST }}{{ url_parts.absolute_uri }}{% get_media_prefix %}{{ page.meta_image }}
+{% endblock %}
+
+
 {% block content %}
 
     <div class="events innerpage">

@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="ru">
+<html prefix="og: http://ogp.me/ns#" xmlns:og="http://ogp.me/ns# lang="ru >
 
 <head>
     <meta charset="UTF-8" />
@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <link rel="icon" type="image/png" href="{% static 'favicon.ico' %}" />
     <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="{% block description %}{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}{% endblock %}" />
+    <meta property="og:description" content="{% block og_description %}{% endblock %}" />
+    <meta property="og:url" content="{{ request.build_absolute_uri }}" />
+    <meta property="og:image" content="{% block meta_image %}{% endblock %}" />
     {{ site_config.html_head|safe }}
 </head>
 

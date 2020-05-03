@@ -4,7 +4,23 @@
 
 
 {% block title %}
-{{ site_config.meta_title}}
+    {{ site_config.meta_title}}
+{% endblock %}
+
+{% block description %}
+    {{ site_config.meta_description}}
+{% endblock %}
+
+{% block og_title %}
+    {{ site_config.meta_title}}
+{% endblock %}
+
+{% block og_description %}
+    {{ site_config.meta_description}}
+{% endblock %}
+
+{% block meta_image %}
+    https://{{ request.META.HTTP_HOST }}{{ url_parts.absolute_uri }}{% get_media_prefix %}{{ site_config.meta_image }}
 {% endblock %}
 
 {% block content %}
