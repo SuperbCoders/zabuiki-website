@@ -1,4 +1,4 @@
-django
+django==2.2.1
 psycopg2-binary==2.8.2
 djangorestframework
 gunicorn==19.9.0
@@ -10,3 +10,4 @@ Pillow
 django-autoslug
 django-admin-thumbnails
 django_ace
+git+https://github.com/yandex-money/yandex-money-kit-django.git

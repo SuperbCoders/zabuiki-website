@@ -17,10 +17,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
+from django.views.generic import TemplateView
 from django.views.static import serve
+from django.contrib import admin
 
 from zabuiki import views
 from zabuiki.account.views import CreateUser
+
+admin.autodiscover()
 
 handler404 = 'zabuiki.views.e_handler404'
 
@@ -31,7 +35,10 @@ urlpatterns = [
     path('events/', views.events, name="events"),
     path('pages/', include('zabuiki.pages.urls')),
     path('create_user/', CreateUser.as_view(), name="create-user"),
-    path("robots.txt", views.robots_txt),
+    path("robots.txt/", views.robots_txt),
+    path('fail-payment/', TemplateView.as_view(template_name='fail.html'), name='payment_fail'),
+    path('success-payment/', TemplateView.as_view(template_name='success.html'), name='payment_success'),
+    path('yandex-money/', include('yandex_money.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
