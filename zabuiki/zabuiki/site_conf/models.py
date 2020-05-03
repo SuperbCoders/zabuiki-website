@@ -60,8 +60,6 @@ class SiteConfig(SeoMeta):
     image_1_pc = models.ImageField("Изображение 1 главной страницы PC", upload_to="images/home")
     image_2_pc = models.ImageField("Изображение 2 главной страницы PC", upload_to="images/home")
     image_3_pc = models.ImageField("Изображение 3 главной страницы PC", upload_to="images/home")
-    image_1_mobile = models.ImageField(
-        "Изображение 1 главной страницы Mobile", upload_to="images/home")
 
     html_head = models.TextField(blank=True)
     html_footer = models.TextField(blank=True)

@@ -20,6 +20,7 @@ from django.urls import include, path
 from django.views.static import serve
 
 from zabuiki import views
+from zabuiki.account.views import CreateUser
 
 handler404 = 'zabuiki.views.e_handler404'
 
@@ -29,6 +30,7 @@ urlpatterns = [
     path('about_us/', views.about, name="about"),
     path('events/', views.events, name="events"),
     path('pages/', include('zabuiki.pages.urls')),
+    path('create_user/', CreateUser.as_view(), name="events"),
     path("robots.txt", views.robots_txt),
 ]
 

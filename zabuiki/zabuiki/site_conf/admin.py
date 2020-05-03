@@ -20,7 +20,6 @@ class SocialInline(admin.TabularInline):
 @admin_thumbnails.thumbnail('image_1_pc')
 @admin_thumbnails.thumbnail('image_2_pc')
 @admin_thumbnails.thumbnail('image_3_pc')
-@admin_thumbnails.thumbnail('image_1_mobile')
 @admin_thumbnails.thumbnail('about_page_direcor_image')
 class SiteConfigAdmin(admin.ModelAdmin):
     form = SiteConfigChangeForm
@@ -65,8 +64,6 @@ class SiteConfigAdmin(admin.ModelAdmin):
                 'image_2_pc_thumbnail',
                 'image_3_pc',
                 'image_3_pc_thumbnail',
-                'image_1_mobile',
-                'image_1_mobile_thumbnail',
             ),
         }),
 
@@ -100,7 +97,7 @@ class MobileHomeBlocksAdmin(admin.ModelAdmin):
         }),
     )
 
-    
+
 @admin_thumbnails.thumbnail('image')
 class HomeMobileSliderAdmin(admin.ModelAdmin):
      fieldsets = (

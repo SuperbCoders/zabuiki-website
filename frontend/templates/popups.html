@@ -19,19 +19,23 @@
     <div class="popup__bg"></div>
     <div class="popup__close"><img src="{% static 'images/close.svg' %}" alt="" /></div>
     <div class="popup__panel">
-        <form class="form --error">
+        <form class="form">
             <div class="form__title">Вступить в клуб</div>
             <label class="label__input">
-                <input type="text" placeholder="имя" />
+                <input type="text" name="name" placeholder="имя" />
+                <span style="color:red; font-size: 14px;" class="error-api name"></span>
             </label>
             <label class="label__input">
-                <input type="text" placeholder="почта" />
+                <input type="text" name="email" placeholder="почта" />
+                <span style="color:red; font-size: 14px;" class="error-api email"></span>
             </label>
             <label class="label__input">
-                <input type="text" placeholder="телефон" />
+                <input type="text" name="phone" id="phone_number" placeholder="телефон" />
+                <span style="color:red; font-size: 14px;" class="error-api phone"></span>
             </label>
             <label class="label__input">
-                <input type="text" placeholder="Ссылка на FB или IG" />
+                <input type="text" name="social" placeholder="Ссылка на FB или IG" />
+                <span style="color:red; font-size: 14px;" class="error-api social"></span>
             </label>
             <div class="submit btn">
                 <button>Отправить заявку</button>
