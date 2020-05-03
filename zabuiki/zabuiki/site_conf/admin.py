@@ -100,6 +100,18 @@ class MobileHomeBlocksAdmin(admin.ModelAdmin):
         }),
     )
 
+    
+@admin_thumbnails.thumbnail('image')
+class HomeMobileSliderAdmin(admin.ModelAdmin):
+     fieldsets = (
+        ('Cлайд', {
+            'fields': (
+                'image',
+                'image_thumbnail',
+            )
+        }),
+    )
+
 
 @admin_thumbnails.thumbnail('image')
 class LecturersAdmin(admin.ModelAdmin):
@@ -118,4 +130,5 @@ class LecturersAdmin(admin.ModelAdmin):
 admin.site.register(SiteConfig, SiteConfigAdmin)
 admin.site.register(MobileHomeBlocks, MobileHomeBlocksAdmin)
 admin.site.register(Social)
+admin.site.register(HomeMobileSlider, HomeMobileSliderAdmin)
 admin.site.register(Lecturers, LecturersAdmin)

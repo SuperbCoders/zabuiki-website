@@ -28,6 +28,17 @@ class MobileHomeBlocks(models.Model):
         return f"Мобильный текстовый блок на главной {self.pk}"
 
 
+class HomeMobileSlider(models.Model):
+    class Meta:
+        verbose_name = "Слайд"
+        verbose_name_plural = "Мобильный Слайдер на главной"
+
+    image = models.ImageField("Изображение", upload_to="images/home/slider")
+
+    def __str__(self):
+        return f"Слайд {self.pk}"
+
+
 class SiteConfig(SeoMeta):
     class Meta:
         verbose_name = "Конфигурация"

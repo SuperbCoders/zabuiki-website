@@ -11,9 +11,9 @@
 <div class="main">
     <div class="container">
         <div class="events__slider">
-            <img src="./images/slide.jpg" srcset="./images/slide@2x.jpg 2x" alt="" />
-            <img src="./images/slide.jpg" srcset="./images/slide@2x.jpg 2x" alt="" />
-            <img src="./images/slide.jpg" srcset="./images/slide@2x.jpg 2x" alt="" />
+            {% for slide in mobile_slider %}
+                <img src="{% get_media_prefix %}{{slide.image}}" alt="" />
+            {% endfor %}
         </div>
         <div class="main__top">
             <div class="main__top-left">{{ site_config.up_text|safe }}</div>
@@ -27,9 +27,9 @@
             </div>
             <div class="nav-container">
                 <div class="nav">
-                    {% for page in pages %}
+                    {% for category in categories %}
                         <div class="nav-wrap">
-                            <a class="nav__link" href="{% url 'pages:page' slug=page.slug %}">{{page.nav_name}}</a>
+                            <a class="nav__link" href="{% url 'pages:page' slug=category.slug %}">{{category.name}}</a>
                         </div>
                     {% endfor %}
                 </div>

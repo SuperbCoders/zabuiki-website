@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load custom_tags %}
+
+{% load static %}
+
+{% block title %}
+    {{ page.meta_title }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="events innerpage">
+        <div class="container">
+            <div class="nav">
+                {% for category in categories %}
+                    <div class="nav-wrap">
+                        <a class="nav__link {% if current_cat == category.slug %} active {% endif %}" 
+                            href="{% url 'pages:page' slug=category.slug %}">{{category.name}}</a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="events__list">
+                <div class="events__title">{{ page.title|safe }}</div>
+                <div class="events__slider">
+                    {% for slide in mobile_slider %}
+                        <img src="{% get_media_prefix %}{{slide.image}}" />
+                    {% endfor %}
+                </div>
+                <div class="events__pics">
+                    <img src="{% get_media_prefix %}{{page.image}}" alt="" />
+                </div>
+                <div class="events__text">
+                   {{ page.html_text|safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if page.lecturer %}
+        <div class="events__teacher">
+            <div class="container">
+                <div class="ticher__pic">
+                    <img src="{% get_media_prefix %}{{page.lecturer.image}}" alt="" />
+                </div>
+                <div class="ticher__name">Ведет встречи {{ page.lecturer.name }}</div>
+                <p class="about__text">{{ page.lecturer.position }}<br>{{ page.lecturer.text|safe }}</p>
+            </div>
+        </div>
+    {% endif %}
+    <div class="events__btn-wrap">
+        <div class="container">
+            <a class="events__btn __callback" href="{{ page.link }}">Записаться</a>
+        </div>
+    </div>
+    <a class="downnpage" href="#">
+        <img src="./images/arrow-down.svg" alt="" />
+    </a>
+
+{% endblock %}

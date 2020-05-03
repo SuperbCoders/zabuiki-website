@@ -21,6 +21,8 @@ from django.views.static import serve
 
 from zabuiki import views
 
+handler404 = 'zabuiki.views.e_handler404'
+
 urlpatterns = [
     path('', views.index, name="index-page"),
     path('admin/', admin.site.urls),
