@@ -13,3 +13,4 @@ db.sqlite3
 !**/migrations/__init__.py
 media/
 static/
+!**/frontend/static/
