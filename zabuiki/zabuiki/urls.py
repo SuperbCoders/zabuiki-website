@@ -29,6 +29,7 @@ urlpatterns = [
     path('about_us/', views.about, name="about"),
     path('events/', views.events, name="events"),
     path('pages/', include('zabuiki.pages.urls')),
+    path("robots.txt", views.robots_txt),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,12 +1,14 @@
+from django.http import HttpResponse
 from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.template import RequestContext
 from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_GET
 
-from zabuiki.pages.models import Page, Category
 from zabuiki.events.models import Event
-from zabuiki.site_conf.models import (Lecturers, MobileHomeBlocks, SiteConfig,
-                                      Social, HomeMobileSlider)
+from zabuiki.pages.models import Category, Page
+from zabuiki.site_conf.models import (HomeMobileSlider, Lecturers,
+                                      MobileHomeBlocks, SiteConfig, Social)
 
 
 def get_main_context(request):
@@ -64,3 +66,12 @@ def events(request):
     })
 
     return render(request, "events.html", context=context)
+
+
+@require_GET
+def robots_txt(request):
+    lines = [
+        "User-Agent: *",
+        "Disallow: /admin/",
+    ]
+    return HttpResponse("\n".join(lines), content_type="text/plain")
