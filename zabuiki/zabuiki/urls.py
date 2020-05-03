@@ -30,7 +30,7 @@ urlpatterns = [
     path('about_us/', views.about, name="about"),
     path('events/', views.events, name="events"),
     path('pages/', include('zabuiki.pages.urls')),
-    path('create_user/', CreateUser.as_view(), name="events"),
+    path('create_user/', CreateUser.as_view(), name="create-user"),
     path("robots.txt", views.robots_txt),
 ]
 
