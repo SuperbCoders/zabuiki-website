@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "zabuiki",
+  "private_key_id": "11d096f841306566cf40e63476660eae375da4cf",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDPElnQVQ7qyRmB\nKDYH9ougT8Th9HnEVEGYuILGF8v+aXHEy3dF1nB4RrqumujNjDXadnweCGr/nkc9\n8IVTz+PsXUtU2ZB1xZXb2lxpZ/mGLB3ctoIDGPUbQ1XpcaVrqSBwBY+MJHgkSSHp\nodCvuUk47REIReBByW9lrg+XHC5W34qoMyj+pbo2kZ8Kl7neJnvXUCXISWTkFGJY\n49szzyeYBLJkXx9irjRypM5K13bg3gNiDpDrC8X3DX2CNE1QYjz5cgFbhV6A2SjE\nFnWN0D324a170g4Qi2EMUXBhX2T33IUXAb+BnDAx3LKWWQGbFfwKCLi1TPbn5WD1\nDRWJd5BVAgMBAAECggEAAqVHWMcnUAUI2ohT9c73vPTQbC2SL+FJ8K0E8FywPL1G\nNN6OoDx5pqA4AlI0xHrUvLleZ1u1w2/IOtLrqhtwLtim42sUTr5PyFiEbVSwEpn7\nwPvUUKYcPxy4KHyYUJvZt5HcB68kMA2N2rDO9LuQrqpdM34BSw1pXAi29b+dGjAj\nA9FG3H9lpI7NbII1O4EypafWlM10EkfsAufzGuqWvvo9nMgL1WvQlODnfIcOoLsi\n5RB458w3xeIZAGWV/EqtSaq6qWUyxyCDVDCuiabBkxLz7x/5QWsoIp9LKQjqQN9C\nWJSpfVj1UkglzFx0XzTESFU4IXhGwkUxGhrcZcNbwQKBgQD2hkwovvNG7stXyASk\nSdcSzW2N4nloqMQ/EjJfiToPxnBV8rCgaeGpm+SdlAKr5feDvacqS2q/+m7WYAd+\ndBMcSUV6Py87VfmwBnsICWi8UF6XsGdDKzZxzM64ChbHipACRbu4ogta/T7g+qpA\n9tbPTKeYhWF58MGdWpXVYxuv4QKBgQDXB9pCHS2FJM1uyzLB96sznZZNf3PDci09\nTqweyl+jdPIRlf9q+60T4mi1ywzpL9QwG4LBaFWAwP7sS2L+ymjri/41C6K+RiW7\nhJDtWQ/TdbPrY/HY+YKbj9wrXj9huHqnyd7WYBAQ+bfBP6H5qD3tpZFBGpnHF5Su\nxH91slf+9QKBgFf68+EyzKXLAT0RwD5Vr/Eg6XFSmxuz513PA7U+xz7sBhlWZJzL\nTOL4JO3r7cwlZWFZ5PfeNHnRSY8udF431L4qlCYduKCHfXXJykzC9uMGF8wxA5lg\nKa0Rd9EMoLaUB/MXqfgptL3DVZZ7PxmyPlV7OPDg4Tngp2id9I1UMoRhAoGARaZ5\nf+jLkdD16elPq5x5i+KDiN67tJcLKEyPW/nZOKzsq92WOiUDTumLWTdIG1AuvtZq\naBNPfsEE0a0ph7Ywfft+f9ghAtjd5/tspjSu96Osf5aEA+/t6k2S10lT5mdG84pj\n77R1/8mjR6lA4gko5g03G4tuPBrbQjDLyGfYMPECgYB2gcQsqdLChsmMmXTxALRr\nlgdWSmr1Bpy67hXUVQjzbmaoA/LZZbhavwxm+kIS6Qxz+N4M8LKDA6wp9nOoWUqO\njOCogeOMG2DIjaSDU9EhHhx7HZSSiVT5bxNAFMJRn/Wu8N69BQXpC2XXNJyzN2un\njs6MJ8yYaGitDxfGf9D9sg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "zabuiki@zabuiki.iam.gserviceaccount.com",
+  "client_id": "116801237507625924400",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/zabuiki%40zabuiki.iam.gserviceaccount.com"
+}

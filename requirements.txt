@@ -10,4 +10,6 @@ Pillow
 django-autoslug
 django-admin-thumbnails
 django_ace
+google-cloud-storage==1.10.0  
+django-storages==1.7.1
 git+https://github.com/yandex-money/yandex-money-kit-django.git

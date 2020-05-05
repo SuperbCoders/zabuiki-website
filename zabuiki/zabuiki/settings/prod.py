@@ -4,15 +4,27 @@ DEBUG = False
 
 SECRET_KEY = os.environ['SECRET_KEY']
 
-ALLOWED_HOSTS = ['zabuiki.appspot.com', '127.0.0.1',]
+ALLOWED_HOSTS = ['*']
 
-STATIC_URL = os.environ['STATIC_URL']
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.join(BASE_DIR, '../zabuiki-be368f3e9c0a.json')
 
-MEDIA_URL = os.environ['MEDIA_URL']
+DEFAULT_FILE_STORAGE = 'zabuiki.settings.gcloud.GoogleCloudMediaFileStorage'
+STATICFILES_STORAGE = 'zabuiki.settings.gcloud.GoogleCloudStaticFileStorage'
+    
+GS_PROJECT_ID = 'zabuiki'
+GS_STATIC_BUCKET_NAME = 'zabuiki-static'
+GS_MEDIA_BUCKET_NAME = 'zabuiki-media'
+    
+STATIC_URL = 'https://storage.googleapis.com/{}/'.format(GS_STATIC_BUCKET_NAME)
+STATIC_ROOT = "static/"
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'zabuiki-static')
-
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'zabuiki-media')
+MEDIA_URL = 'https://storage.googleapis.com/{}/'.format(GS_MEDIA_BUCKET_NAME)
+MEDIA_ROOT = "media/"
+    
+UPLOAD_ROOT = 'media/uploads/'
+    
+DOWNLOAD_ROOT = os.path.join(BASE_DIR, "static/media/downloads")
+DOWNLOAD_URL = STATIC_URL + "media/downloads"
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
