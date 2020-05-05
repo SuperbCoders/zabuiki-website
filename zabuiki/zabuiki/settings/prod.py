@@ -32,7 +32,7 @@ STATICFILES_DIRS = (
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'HOST': os.environ['DB_HOST'],
         'PORT': os.environ['DB_PORT'],
         'NAME': os.environ['DB_NAME'],
