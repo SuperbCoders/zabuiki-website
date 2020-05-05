@@ -5,6 +5,16 @@ FROM python:3.6.9-alpine as builder
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+ENV DB_HOST 35.228.215.212
+ENV DB_PORT 5432
+ENV DB_NAME zabuiki_db
+ENV DB_USER zabuiki
+ENV DB_PASSWORD 6f5fMcMrStwHcNx3
+
+ENV SECRET_KEY e!g5@v1sqg9@76py*a-gfqq&#-22h)^(cdxe+8zg6toshu##r_
+ENV STATIC_URL https://storage.googleapis.com/zabuiki-static/static/
+ENV MEDIA_URL https://storage.googleapis.com/zabuiki-media/media/
+
 # create directory for the zabuiki user
 RUN mkdir -p /home/zabuiki
 
