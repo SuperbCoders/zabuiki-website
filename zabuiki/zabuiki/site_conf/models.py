@@ -45,8 +45,8 @@ class SiteConfig(SeoMeta):
         verbose_name_plural = "Конфигурация сайта"
 
     email = models.EmailField("Email организации", blank=True)
-    anonce_text = models.CharField("Текст анонса", max_length=100, blank=False)
-    anonce_link = models.URLField("Ссылка", blank=False, default=default_text.HOME_ANONCE)
+    anonce_text = models.CharField("Текст анонса", max_length=100, blank=False, default=default_text.HOME_ANONCE)
+    anonce_link = models.URLField("Ссылка", blank=False, default="https://google.com")
     up_text = models.TextField("Левый верхний текст главной страницы",
         max_length=100,
         blank=False,
