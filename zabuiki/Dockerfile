@@ -55,10 +55,13 @@ COPY ./entrypoint.sh $APP_HOME
 # copy project
 COPY . $APP_HOME
 
-RUN pip install -r requirements.txt
-
-# chown all the files to the zabuiki user
 RUN chown -R zabuiki:zabuiki $APP_HOME
+
+
+RUN pip install -r requirements.txt --no-cache-dir
+RUN chown -R zabuiki:zabuiki /usr/local/
+# chown all the files to the zabuiki user
+
 
 # change to the zabuiki user
 USER zabuiki

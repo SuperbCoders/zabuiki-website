@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 
     'phonenumber_field',
     'django_ace',
-    'yandex_money',
+    #'yandex_money',
 
     'zabuiki.account',
     'zabuiki.site_conf',
