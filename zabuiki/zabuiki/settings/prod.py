@@ -12,7 +12,7 @@ DEFAULT_FILE_STORAGE = 'zabuiki.settings.gcloud.GoogleCloudMediaFileStorage'
 STATICFILES_STORAGE = 'zabuiki.settings.gcloud.GoogleCloudStaticFileStorage'
     
 GS_PROJECT_ID = 'zabuiki'
-GS_STATIC_BUCKET_NAME = 'zabuiki-static'
+GS_STATIC_BUCKET_NAME = 'zabuiki-statics'
 GS_MEDIA_BUCKET_NAME = 'zabuiki-media'
     
 STATIC_URL = 'https://storage.googleapis.com/{}/'.format(GS_STATIC_BUCKET_NAME)
