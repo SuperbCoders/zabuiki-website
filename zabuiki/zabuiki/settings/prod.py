@@ -26,10 +26,6 @@ UPLOAD_ROOT = 'media/uploads/'
 DOWNLOAD_ROOT = os.path.join(BASE_DIR, "static/media/downloads")
 DOWNLOAD_URL = STATIC_URL + "media/downloads"
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
