@@ -8,7 +8,8 @@ class Event(SeoMeta):
     class Meta:
         verbose_name = "Событие"
         verbose_name_plural = "Расписание событий"
-
+       
+       
     name = models.CharField("Название", max_length=68)
     is_free = models.BooleanField(
         "Бесплатное", default=False, help_text="Если указать этот параметр стоимость вводить не нужно")

@@ -9,6 +9,7 @@ from zabuiki.events.models import Event
 from zabuiki.pages.models import Category, Page
 from zabuiki.site_conf.models import (HomeMobileSlider, Lecturers,
                                       MobileHomeBlocks, SiteConfig, Social)
+from django.views.generic.list import ListView
 
 
 def get_main_context(request):
@@ -36,7 +37,7 @@ def e_handler404(request, exception):
 
 def index(request):
     context = get_main_context(request)
-    
+
     mobile_blocks = MobileHomeBlocks.objects.filter(is_view=True)
     mobile_slider = HomeMobileSlider.objects.all()
 
@@ -66,6 +67,15 @@ def events(request):
     })
 
     return render(request, "events.html", context=context)
+
+
+class EventsView(ListView):
+    model = Event
+    paginate_by = 12
+    context_object_name = 'events'
+    queryset = Event.objects.filter(is_view=True)
+    template_name = 'events.html'
+    ordering = ['-event_time']
 
 
 @require_GET
