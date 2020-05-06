@@ -19,7 +19,8 @@ class MobileHomeBlocks(models.Model):
         verbose_name_plural = "Мобильные блоки на главной"
         ordering = ["created"]
 
-    image = models.ImageField("Изображение", upload_to="images/home")
+    image = models.ImageField("Изображение retina", upload_to="images/home")
+    image_r = models.ImageField("Изображение retina", upload_to="images/home")
     text = models.TextField("Текст")
     is_view = models.BooleanField("Отображать на сайте", default=True)
     created = models.DateTimeField("Дата создания", default=timezone.now)
@@ -34,6 +35,7 @@ class HomeMobileSlider(models.Model):
         verbose_name_plural = "Мобильный Слайдер на главной"
 
     image = models.ImageField("Изображение", upload_to="images/home/slider")
+    image_r = models.ImageField("Изображение retina", upload_to="images/home/slider")
 
     def __str__(self):
         return f"Слайд {self.pk}"
@@ -61,6 +63,10 @@ class SiteConfig(SeoMeta):
     image_2_pc = models.ImageField("Изображение 2 главной страницы PC", upload_to="images/home")
     image_3_pc = models.ImageField("Изображение 3 главной страницы PC", upload_to="images/home")
 
+    image_1_pc_r = models.ImageField("Изображение 1 главной страницы PC retina", upload_to="images/home")
+    image_2_pc_r = models.ImageField("Изображение 2 главной страницы PC retina", upload_to="images/home")
+    image_3_pc_r = models.ImageField("Изображение 3 главной страницы PC retina", upload_to="images/home")
+
     html_head = models.TextField(blank=True)
     html_footer = models.TextField(blank=True)
 
@@ -84,6 +90,7 @@ class SiteConfig(SeoMeta):
         default="МАША ТИМОШЕНКО"
     )
     about_page_direcor_image = models.ImageField("Изображение директора", upload_to="images/about")
+    about_page_direcor_image_r = models.ImageField("Изображение директора retina", upload_to="images/about")
 
     enabled = models.BooleanField("Активная конфигурация", default=True)
 
@@ -112,6 +119,7 @@ class Lecturers(models.Model):
     name = models.CharField("ФИО", max_length=155)
     position = models.CharField("Должность", max_length=155)
     image = models.ImageField("Изображение", upload_to="images/about")
+    image_r = models.ImageField("Изображение retina", upload_to="images/about")
     text = models.TextField("Описание", blank=False)
 
     def __str__(self):

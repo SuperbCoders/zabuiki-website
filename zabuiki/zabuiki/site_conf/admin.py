@@ -20,7 +20,11 @@ class SocialInline(admin.TabularInline):
 @admin_thumbnails.thumbnail('image_1_pc')
 @admin_thumbnails.thumbnail('image_2_pc')
 @admin_thumbnails.thumbnail('image_3_pc')
+@admin_thumbnails.thumbnail('image_1_pc_r')
+@admin_thumbnails.thumbnail('image_2_pc_r')
+@admin_thumbnails.thumbnail('image_3_pc_r')
 @admin_thumbnails.thumbnail('about_page_direcor_image')
+@admin_thumbnails.thumbnail('about_page_direcor_image_r')
 class SiteConfigAdmin(admin.ModelAdmin):
     form = SiteConfigChangeForm
 
@@ -64,6 +68,12 @@ class SiteConfigAdmin(admin.ModelAdmin):
                 'image_2_pc_thumbnail',
                 'image_3_pc',
                 'image_3_pc_thumbnail',
+                'image_1_pc_r',
+                'image_1_pc_r_thumbnail',
+                'image_2_pc_r',
+                'image_2_pc_r_thumbnail',
+                'image_3_pc_r',
+                'image_3_pc_r_thumbnail',
             ),
         }),
 
@@ -72,6 +82,8 @@ class SiteConfigAdmin(admin.ModelAdmin):
                 'about_page_direcor',
                 'about_page_direcor_image',
                 'about_page_direcor_image_thumbnail',
+                'about_page_direcor_image_r',
+                'about_page_direcor_image_r_thumbnail',
                 'about_page_main_text',
                 'about_page_top_first_text',
                 'about_page_top_second_text',
@@ -82,6 +94,7 @@ class SiteConfigAdmin(admin.ModelAdmin):
 
 
 @admin_thumbnails.thumbnail('image')
+@admin_thumbnails.thumbnail('image_r')
 class MobileHomeBlocksAdmin(admin.ModelAdmin):
     list_display = ('__str__', 'is_view', 'created')
     ordering = ('-created',)
@@ -90,6 +103,8 @@ class MobileHomeBlocksAdmin(admin.ModelAdmin):
             'fields': (
                 'image',
                 'image_thumbnail',
+                'image_r',
+                'image_r_thumbnail',
                 'text',
                 'created',
             )
@@ -98,27 +113,33 @@ class MobileHomeBlocksAdmin(admin.ModelAdmin):
 
 
 @admin_thumbnails.thumbnail('image')
+@admin_thumbnails.thumbnail('image_r')
 class HomeMobileSliderAdmin(admin.ModelAdmin):
      fieldsets = (
         ('Cлайд', {
             'fields': (
                 'image',
                 'image_thumbnail',
+                'image_r',
+                'image_r_thumbnail',
             )
         }),
     )
 
 
 @admin_thumbnails.thumbnail('image')
+@admin_thumbnails.thumbnail('image_r')
 class LecturersAdmin(admin.ModelAdmin):
     fieldsets = (
-        ('Информация о лекторе', {
+        ('Информация о участнике', {
             'fields': (
                 'name',
                 'position',
                 'text',
                 'image',
                 'image_thumbnail',
+                'image_r',
+                'image_r_thumbnail',
             )
         }),
     )

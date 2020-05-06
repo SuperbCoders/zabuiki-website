@@ -39,10 +39,11 @@ class MobileSliderInline(ImageWidgetAdmin):
     model = PageMobileSlider
     extra = 0
     max_num = 10
-    image_fields = ['image']
-    
+    image_fields = ['image', 'image_r']
+
 
 @admin_thumbnails.thumbnail('image')
+@admin_thumbnails.thumbnail('image_r')
 class PageAdmin(admin.ModelAdmin):
     list_display = ('title', 'is_view', 'created',)
     ordering = ('-created',)
@@ -67,6 +68,8 @@ class PageAdmin(admin.ModelAdmin):
                 'created',
                 'image',
                 'image_thumbnail',
+                'image_r',
+                'image_r_thumbnail',
                 'html_text',
                 'html_text_2',
             ),

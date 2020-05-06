@@ -36,6 +36,8 @@ class Page(SeoMeta):
     is_view = models.BooleanField("Отображать на сайте", default=True)
     image = models.ImageField("Заглавное изображение",
                               upload_to="images/pages/main")
+    image_r = models.ImageField("Заглавное изображение retina",
+                              upload_to="images/pages/main")
     created = models.DateTimeField("Дата создания", default=timezone.now)
     lecturer = models.ForeignKey(Lecturers, verbose_name="Лектор", null=True, on_delete=models.SET_NULL)
     link = models.URLField("Ссылка кнопки записаться", default="/")
@@ -51,6 +53,7 @@ class PageMobileSlider(models.Model):
 
     page = models.ForeignKey(Page, on_delete=models.CASCADE)
     image = models.ImageField("Изображение", upload_to="images/pages/slider")
+    image_r = models.ImageField("Изображение retina", upload_to="images/pages/slider")
 
     def __str__(self):
         return ""
