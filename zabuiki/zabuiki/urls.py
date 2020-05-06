@@ -39,7 +39,7 @@ urlpatterns = [
     path("robots.txt/", views.robots_txt),
     path('fail-payment/', TemplateView.as_view(template_name='fail.html'), name='payment_fail'),
     path('success-payment/', TemplateView.as_view(template_name='success.html'), name='payment_success'),
-    path('yandex-money/', include('yandex_money.urls')),
+    #path('yandex-money/', include('yandex_money.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
