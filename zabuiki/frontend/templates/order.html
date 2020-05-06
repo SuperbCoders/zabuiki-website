@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load custom_tags %}
+
+{% load static %}
+
+{% block title %}
+    Оформление заказа
+{% endblock %}
+
+{% block content %}
+<div class="">
+    <div class="page_404__text">
+        <form name="ShopForm" method="POST" class="form" action="https://money.yandex.ru/eshop.xml">
+            <ul style="list-style: none;">
+                <li style="margin-bottom: 20px;">
+                    Сумма заказа: <b>{{ form.sum.value }}</b>
+                </li>
+
+                {{ form.as_ul|safe }}
+
+                <li style="margin-top: 20px;">
+                    <input type="submit" value="Оплатить">
+                </li>
+            </ul>
+        </form>
+    </div>
+</div>
+{% endblock %}

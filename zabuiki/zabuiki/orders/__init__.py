@@ -1,0 +1,1 @@
+default_app_config = 'zabuiki.orders.apps.OrdersConfig'

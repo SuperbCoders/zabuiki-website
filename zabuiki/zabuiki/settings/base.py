@@ -40,12 +40,13 @@ INSTALLED_APPS = [
 
     'phonenumber_field',
     'django_ace',
-    #'yandex_money',
+    'yandex_money',
 
     'zabuiki.account',
     'zabuiki.site_conf',
     'zabuiki.events',
     'zabuiki.pages',
+    'zabuiki.orders',
 ]
 
 MIDDLEWARE = [
@@ -138,12 +139,9 @@ STATIC_URL = '/static/'
 ADMIN_THUMBNAIL_DEFAULT_LABEL = "Просмотр"
 ADMIN_THUMBNAIL_STYLE = {'display': 'block', 'width': '200px', 'height': 'auto'}
 
-
+YANDEX_MONEY_SCID = 1661851
+YANDEX_MONEY_SHOP_ID = 659628
+YANDEX_MONEY_SHOP_PASSWORD = 'live_dOE03wobDWB4be6vsDH4RrBulWxRVfXgyMQgaMBNnog'
 YANDEX_MONEY_DEBUG = False
-YANDEX_MONEY_SCID = 12345
-YANDEX_MONEY_SHOP_ID = 56789
-YANDEX_MONEY_SHOP_PASSWORD = 'password'
-YANDEX_MONEY_FAIL_URL = 'https://example.com/fail-payment/'
-YANDEX_MONEY_SUCCESS_URL = 'https://example.com/success-payment/'
-# информировать о случаях, когда модуль вернул Яндекс.Кассе ошибку
-YANDEX_MONEY_MAIL_ADMINS_ON_PAYMENT_ERROR = True
+YANDEX_MONEY_FAIL_URL = 'http://example.com/fail-payment/'
+YANDEX_MONEY_SUCCESS_URL = 'http://example.com/success-payment/'

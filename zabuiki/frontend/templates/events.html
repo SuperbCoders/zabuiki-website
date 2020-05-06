@@ -4,19 +4,35 @@
 {% load static %}
 
 {% block title %}
-    Расписание ближайших событий
+    {% if site_config.meta_title_events %}
+        {{ site_config.meta_title_events }}
+    {% else %}
+        Расписание ближайших событий
+    {% endif %}
 {% endblock %}
 
 {% block description %}
-    {{ site_config.meta_description}}
+    {% if site_config.meta_description_events %}
+        {{ site_config.meta_description_events }}
+    {% else %}
+        {{ site_config.meta_description}}
+    {% endif %}
 {% endblock %}
 
 {% block og_title %}
-    Расписание ближайших событий
+    {% if site_config.meta_title_events %}
+        { site_config.meta_title_events }}
+    {% else %}
+        Расписание ближайших событий
+    {% endif %}
 {% endblock %}
 
 {% block og_description %}
-    {{ site_config.meta_description}}
+    {% if site_config.meta_description_events %}
+        {{ site_config.meta_description_events }}
+    {% else %}
+        {{ site_config.meta_description}}
+    {% endif %}
 {% endblock %}
 
 {% block meta_image %}
@@ -47,8 +63,8 @@
                                             <span >Бесплатно</span>
                                         </div>
                                     {% else %}
-                                        <a class="event__price" href="#">
-                                            <span>4500 ₽</span>
+                                        <a class="event__price" href="{% url 'events-payment' event_id=event_t.id %}">
+                                            <span>{{ event_t.price }} ₽</span>
                                             <p>Купить билет</p>
                                         </a>
                                     {% endif %}

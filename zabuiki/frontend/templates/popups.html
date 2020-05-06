@@ -5,8 +5,8 @@
     <div class="popup__bg"></div>
     <div class="popup__close"><img src="{% static 'images/close.svg' %}" alt="" /></div>
     <div class="popup__panel">
-        <div class="mobile__nav"><a class="header__link" href="#">расписание </a><a class="header__link __callback"
-                href="#">вступить в клуб </a></div>
+        <div class="mobile__nav"><a class="header__link" href="{% url 'events' %}">расписание </a><a class="header__link __callback"
+                >вступить в клуб </a></div>
         <div class="socials">
             {% for social in socials %}
                 <div><a class="socilas__link" target="_blank" href="{{ social.link }}">{{ social.name }}</a></div>

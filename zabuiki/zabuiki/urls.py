@@ -20,7 +20,7 @@ from django.urls import include, path
 from django.views.generic import TemplateView
 from django.views.static import serve
 from django.contrib import admin
-
+from zabuiki.orders.views import order_event
 from zabuiki import views
 from zabuiki.account.views import CreateUser
 
@@ -31,15 +31,16 @@ handler404 = 'zabuiki.views.e_handler404'
 urlpatterns = [
     path('', views.index, name="index-page"),
     path('admin/', admin.site.urls),
-    path('about_us/', views.about, name="about"),
+    path('about/', views.about, name="about"),
     #path('events/', views.events, name="events"),
     path('events/', views.EventsView.as_view(), name="events"),
-    path('pages/', include('zabuiki.pages.urls')),
+    path('events/<event_id>/payment', order_event, name="events-payment"),
+    path('products/', include('zabuiki.pages.urls')),
     path('create_user/', CreateUser.as_view(), name="create-user"),
     path("robots.txt/", views.robots_txt),
     path('fail-payment/', TemplateView.as_view(template_name='fail.html'), name='payment_fail'),
     path('success-payment/', TemplateView.as_view(template_name='success.html'), name='payment_success'),
-    #path('yandex-money/', include('yandex_money.urls')),
+    path('yandex-money/', include('yandex_money.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

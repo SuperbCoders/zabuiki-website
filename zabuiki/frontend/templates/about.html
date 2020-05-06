@@ -4,19 +4,35 @@
 
 
 {% block title %}
-    О нас
+    {% if site_config.meta_title_about %}
+        {{ site_config.meta_title_about }}
+    {% else %}
+        О нас
+    {% endif %}
 {% endblock %}
 
 {% block description %}
-    {{ site_config.meta_description}}
+    {% if site_config.meta_description_about %}
+        {{ site_config.meta_description_about }}
+    {% else %}
+        {{ site_config.meta_description}}
+    {% endif %}
 {% endblock %}
 
 {% block og_title %}
-    О нас
+    {% if site_config.meta_title_about %}
+        { site_config.meta_title_about }}
+    {% else %}
+        О нас
+    {% endif %}
 {% endblock %}
 
 {% block og_description %}
-    {{ site_config.meta_description}}
+    {% if site_config.meta_description_about %}
+        {{ site_config.meta_description_about }}
+    {% else %}
+        {{ site_config.meta_description}}
+    {% endif %}
 {% endblock %}
 
 {% block meta_image %}

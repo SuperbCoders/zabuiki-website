@@ -4,7 +4,7 @@ from django.utils import timezone
 from zabuiki.site_conf.models import SeoMeta
 
 
-class Event(SeoMeta):
+class Event(models.Model):
     class Meta:
         verbose_name = "Событие"
         verbose_name_plural = "Расписание событий"

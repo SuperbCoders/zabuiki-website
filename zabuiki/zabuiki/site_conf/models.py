@@ -94,6 +94,14 @@ class SiteConfig(SeoMeta):
 
     enabled = models.BooleanField("Активная конфигурация", default=True)
 
+    meta_title_about = models.CharField("Meta title", max_length=68, blank=True)
+    meta_description_about = models.TextField(
+        "Meta description", max_length=155, blank=True)
+    
+    meta_title_events = models.CharField("Meta title", max_length=68, blank=True)
+    meta_description_events = models.TextField(
+        "Meta description", max_length=155, blank=True)
+
     def __str__(self):
         return f"Конфигурация сайта zabuiki {self.pk}"
 

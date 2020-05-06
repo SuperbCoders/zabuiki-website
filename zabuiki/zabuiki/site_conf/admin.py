@@ -37,6 +37,20 @@ class SiteConfigAdmin(admin.ModelAdmin):
             )
         }),
 
+        ('META информация страницы О нас', {
+            'fields': (
+                'meta_title_about',
+                'meta_description_about',
+            )
+        }),
+
+        ('META информация страницы Расписание', {
+            'fields': (
+                'meta_title_events',
+                'meta_description_events',
+            )
+        }),
+
         ('Основные данные', {
             'fields': (
                 'email',
