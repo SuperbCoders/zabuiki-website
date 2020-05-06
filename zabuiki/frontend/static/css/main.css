@@ -31,7 +31,9 @@
 .container-fluid {
   padding-right: var(--outer-margin, 2rem);
   padding-left: var(--outer-margin, 2rem); }
-
+a{
+  cursor: pointer;
+}
 .row {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -2448,7 +2450,7 @@ path {
     bottom: -37px;
     position: absolute; }
   .mobile__nav .header__link {
-    font-size: 22px;
+    font-size: 28px;
     margin-bottom: 30px;
     color: #fff;
     text-align: center;
