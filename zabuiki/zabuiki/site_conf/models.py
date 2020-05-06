@@ -106,8 +106,8 @@ class Social(models.Model):
 
 class Lecturers(models.Model):
     class Meta:
-        verbose_name = "Лектор"
-        verbose_name_plural = "Список лекторов"
+        verbose_name = "Участники"
+        verbose_name_plural = "Список участников"
 
     name = models.CharField("ФИО", max_length=155)
     position = models.CharField("Должность", max_length=155)

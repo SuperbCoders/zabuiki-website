@@ -75,8 +75,7 @@ class SiteConfigAdmin(admin.ModelAdmin):
                 'about_page_main_text',
                 'about_page_top_first_text',
                 'about_page_top_second_text',
-                'about_page_bottom_left_text',
-                'about_page_bottom_right_text',
+                'about_page_bottom_html',
             ),
         }),
     )
