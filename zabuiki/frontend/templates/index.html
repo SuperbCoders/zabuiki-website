@@ -28,13 +28,13 @@
     <div class="container">
         <div class="events__slider">
             {% for slide in mobile_slider %}
-                <img src="{% get_media_prefix %}{{slide.image}}" alt="" />
+                <img src="{% get_media_prefix %}{{slide.image}}" srcset="{% get_media_prefix %}{{slide.image_r}} 2x" alt="" />
             {% endfor %}
         </div>
         <div class="main__top">
             <div class="main__top-left">{{ site_config.up_text|safe }}</div>
             <div class="main__top-center">
-                <img src="{% get_media_prefix %}{{site_config.image_1_pc}}" alt="" />
+                <img src="{% get_media_prefix %}{{site_config.image_1_pc}}" srcset="{% get_media_prefix %}{{site_config.image_1_pc_r}} 2x" alt="" />
             </div>
             <div class="main__top-right">
                 <a style="color:#FF0000; text-decoration: none;" target="_blank" href="{{ site_config.anonce_link}}">
@@ -65,11 +65,11 @@
                 </div>
             </div>
             <div class="main__bottom-center">
-                <img src="{% get_media_prefix %}{{site_config.image_2_pc}}" alt="" />
+                <img src="{% get_media_prefix %}{{site_config.image_2_pc}}"  srcset="{% get_media_prefix %}{{site_config.image_2_pc_r}} 2x" alt="" />
             </div>
         </div>
         <div class="main__bottom-right">
-            <img src="{% get_media_prefix %}{{site_config.image_3_pc}}" alt="" />
+            <img src="{% get_media_prefix %}{{site_config.image_3_pc}}" srcset="{% get_media_prefix %}{{site_config.image_3_pc_r}} 2x" alt="" />
         </div>
     </div>
     <div class="main__events">
@@ -77,7 +77,7 @@
             {% for mobile_block in mobile_blocks %}
                 <a class="main__event" href="">
                     <div class="main__event-pic">
-                        <img src="{% get_media_prefix %}{{mobile_block.image}}" srcset="{% get_media_prefix %}{{mobile_block.image}}" alt="" />
+                        <img src="{% get_media_prefix %}{{mobile_block.image}}" srcset="{% get_media_prefix %}{{mobile_block.image_r}} 2x" alt="" />
                     </div>
                     <div class="main__event-text">{{ mobile_block.text }}</div>
                 </a>

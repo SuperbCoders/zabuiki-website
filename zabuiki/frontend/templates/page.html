@@ -40,11 +40,11 @@
                 <div class="events__title">{{ page.title|safe }}</div>
                 <div class="events__slider">
                     {% for slide in mobile_slider %}
-                        <img src="{% get_media_prefix %}{{slide.image}}" />
+                        <img src="{% get_media_prefix %}{{slide.image}}" srcset="{% get_media_prefix %}{{ slide.image_r }} 2x" />
                     {% endfor %}
                 </div>
                 <div class="events__pics">
-                    <img src="{% get_media_prefix %}{{page.image}}" alt="" />
+                    <img src="{% get_media_prefix %}{{page.image}}" srcset="{% get_media_prefix %}{{ page.image_r }} 2x" alt="" />
                 </div>
                 <div class="events__text">
                    {{ page.html_text|safe }}
@@ -57,7 +57,7 @@
         <div class="events__teacher">
             <div class="container">
                 <div class="ticher__pic">
-                    <img src="{% get_media_prefix %}{{page.lecturer.image}}" alt="" />
+                    <img src="{% get_media_prefix %}{{page.lecturer.image}}" srcset="{% get_media_prefix %}{{ page.lecturer.image_r }} 2x" alt="" />
                 </div>
                 <div class="ticher__name">Ведет встречи {{ page.lecturer.name }}</div>
                 <p class="about__text">{{ page.lecturer.position }}<br>{{ page.lecturer.text|safe }}</p>

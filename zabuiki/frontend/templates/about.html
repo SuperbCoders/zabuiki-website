@@ -34,7 +34,7 @@
             <div class="about__list">
                 <div class="about__director">
                     <div class="about__director-pic">
-                        <img src="{% get_media_prefix %}{{ site_config.about_page_direcor_image }}" alt="" />
+                        <img src="{% get_media_prefix %}{{ site_config.about_page_direcor_image }}" srcset="{% get_media_prefix %}{{ site_config.about_page_direcor_image_r }} 2x" alt="" />
                     </div>
                     <div class="about__director-name">
                         <p>{{ site_config.about_page_direcor|safe }}</p><span> директор</span>
@@ -59,7 +59,7 @@
                 {% for lecturer in lecturers %}
                     <div class="ticher">
                         <div class="ticher__pic">
-                            <img src="{% get_media_prefix %}{{lecturer.image}}" alt="" />
+                            <img src="{% get_media_prefix %}{{lecturer.image}}" srcset="{% get_media_prefix %}{{ lecturer.image_r }} 2x" alt="" />
                         </div>
                         <div class="ticher__name">{{ lecturer.name }}</div>
                         <p class="about__text">
