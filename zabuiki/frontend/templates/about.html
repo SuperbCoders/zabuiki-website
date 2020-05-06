@@ -69,13 +69,7 @@
                 {% endfor %}
             </div>
             <div class="about__bottom">
-                <p class="about__text">
-                    {{ site_config.about_page_bottom_left_text|safe }}
-                <p class="about__text">
-                    <span>
-                        {{ site_config.about_page_bottom_right_text|safe }}
-                    </span>
-                </p>
+                {{ site_config.about_page_bottom_html|safe }}
             </div>
         </div>
     </div>

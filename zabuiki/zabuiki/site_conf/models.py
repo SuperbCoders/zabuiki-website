@@ -66,14 +66,16 @@ class SiteConfig(SeoMeta):
 
     about_page_main_text = models.TextField(
         "Заголовок", default=default_text.ABOUT_PAGE_MAIN)
+
     about_page_top_first_text = models.TextField(
         "Верхний текст 1", default=default_text.ABOUT_PAGE_TOP_ITEM_1)
+        
     about_page_top_second_text = models.TextField(
         "Верхний текст 2", default=default_text.ABOUT_PAGE_TOP_ITEM_2)
-    about_page_bottom_left_text = models.TextField(
-        "Нижний левый текст", default=default_text.ABOUT_PAGE_BOTTOM_ITEM_LEFT)
-    about_page_bottom_right_text = models.TextField(
-        "Нижний правый текст", default=default_text.ABOUT_PAGE_BOTTOM_ITEM_RIGHT)
+
+    about_page_bottom_html = models.TextField(
+        "Нижний html", default=default_text.ABOUT_PAGE_BOTTOM)
+  
 
     about_page_direcor = models.CharField(
         "Директор", 
