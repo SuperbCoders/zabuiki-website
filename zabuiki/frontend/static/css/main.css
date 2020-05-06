@@ -34,6 +34,43 @@
 a{
   cursor: pointer;
 }
+
+.form-order input{
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    height: 48px;
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    -webkit-transform: translateY(-4px);
+    -ms-transform: translateY(-4px);
+    transform: translateY(-4px);
+    border-bottom: 1px solid #000;
+}
+.form-order select{
+    text-transform: none;
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: none;
+    padding: 6px 0px;
+    text-align: center;
+    border-color: #000;
+}
+.form-order  input[type=submit] {
+  padding: 10px 46px;
+  border: 0 none;
+  height: auto;
+  margin-top: 30px;
+  border: 1px solid;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 0;
+  width: auto; 
+}
 .row {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

@@ -64,7 +64,7 @@
                                         </div>
                                     {% else %}
                                         <a class="event__price" href="{% url 'events-payment' event_id=event_t.id %}">
-                                            <span>{{ event_t.price }} ₽</span>
+                                            <span>{{ event_t.price | stringformat:'d' }} ₽</span>
                                             <p>Купить билет</p>
                                         </a>
                                     {% endif %}
