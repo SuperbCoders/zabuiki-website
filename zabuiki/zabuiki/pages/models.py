@@ -32,6 +32,7 @@ class Page(SeoMeta):
     category = models.ForeignKey(Category, verbose_name="Категория", null=True, on_delete=models.SET_NULL)
 
     html_text = models.TextField("Html", default=HTML)
+    html_text_2 = models.TextField("Html 2", blank=True)
     is_view = models.BooleanField("Отображать на сайте", default=True)
     image = models.ImageField("Заглавное изображение",
                               upload_to="images/pages/main")

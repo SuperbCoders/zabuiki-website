@@ -40,6 +40,7 @@ class MobileSliderInline(ImageWidgetAdmin):
     extra = 0
     max_num = 10
     image_fields = ['image']
+    
 
 @admin_thumbnails.thumbnail('image')
 class PageAdmin(admin.ModelAdmin):
@@ -67,6 +68,7 @@ class PageAdmin(admin.ModelAdmin):
                 'image',
                 'image_thumbnail',
                 'html_text',
+                'html_text_2',
             ),
         }),
     )
