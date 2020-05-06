@@ -53,13 +53,24 @@ class User(AbstractBaseUser, PermissionsMixin):
             (BLOCKED, "Заблокирован"),
         )
 
+    class MemberStatus:
+        MEMBER = "0"
+        NOT_MEMBER = "1"
+        WAIT = "2"
+
+        choices = (
+            (MEMBER, "Член клуба"),
+            (NOT_MEMBER, "Отказ"),
+            (WAIT, "Заявка на рассмотрении"),
+        )
+
     class PaymentStatus:
         PAID = "0"
         NOT_PAID = "1"
 
         choices = (
-            (PAID, "Оплачено"),
-            (NOT_PAID, "Не оплачено"),
+            (PAID, "Оплатил/Активен"),
+            (NOT_PAID, "Нет оплаты/Не активен"),
         )
 
     username = None
@@ -72,6 +83,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         "Статус", max_length=1, choices=UserStatus.choices, default=UserStatus.ACTIVE)
     payment_status = models.CharField(
         "Оплата", max_length=1, choices=PaymentStatus.choices, default=PaymentStatus.NOT_PAID)
+    member_status = models.CharField(
+        "Статус членства", max_length=1, choices=MemberStatus.choices, default=MemberStatus.WAIT)
     social = models.URLField("Cоцсеть", blank=True)
     telegram = models.CharField("Телеграм", blank=True, max_length=100)
     comment = models.TextField("Комментарий", blank=True)

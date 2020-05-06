@@ -35,6 +35,7 @@ class AccountAdmin(UserAdmin):
             'fields': (
                 'status',
                 'payment_status',
+                'member_status',
                 'comment'
             ),
         }),
