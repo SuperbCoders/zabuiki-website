@@ -44,15 +44,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name = "Пользователь"
         verbose_name_plural = "Пользователи"
 
-    class UserStatus:
-        ACTIVE = "0"
-        BLOCKED = "1"
-
-        choices = (
-            (ACTIVE, "Активен"),
-            (BLOCKED, "Заблокирован"),
-        )
-
     class MemberStatus:
         MEMBER = "0"
         NOT_MEMBER = "1"
@@ -79,8 +70,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField("Email", blank=True, db_index=True, unique=True)
     phone = PossiblePhoneNumberField(
         "Номер телефона", blank=True, null=True, db_index=True, unique=True)
-    status = models.CharField(
-        "Статус", max_length=1, choices=UserStatus.choices, default=UserStatus.ACTIVE)
     payment_status = models.CharField(
         "Оплата", max_length=1, choices=PaymentStatus.choices, default=PaymentStatus.NOT_PAID)
     member_status = models.CharField(

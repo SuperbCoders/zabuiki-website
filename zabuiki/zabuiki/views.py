@@ -75,7 +75,7 @@ class EventsView(ListView):
     context_object_name = 'events'
     queryset = Event.objects.filter(is_view=True)
     template_name = 'events.html'
-    ordering = ['-event_time']
+    ordering = ['event_time']
 
     def get_context_data(self, **kwargs):
         context = super(EventsView, self).get_context_data(**kwargs)

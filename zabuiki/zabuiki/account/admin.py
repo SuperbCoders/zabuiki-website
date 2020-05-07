@@ -33,7 +33,6 @@ class AccountAdmin(UserAdmin):
         }),
         ('Административная информация', {
             'fields': (
-                'status',
                 'payment_status',
                 'member_status',
                 'comment'
