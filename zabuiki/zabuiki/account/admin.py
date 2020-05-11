@@ -6,7 +6,7 @@ from django.contrib.auth.admin import UserAdmin
 
 class AccountAdmin(UserAdmin):
 
-    list_display = ('__str__', 'email', 'phone', 'status', 'date_joined', 'is_staff')
+    list_display = ('__str__', 'email', 'phone', 'member_status', 'date_joined', 'is_staff')
     ordering = ('pk', 'is_staff',)
     search_fields = ('email', 'phone',)
     list_per_page = 150
